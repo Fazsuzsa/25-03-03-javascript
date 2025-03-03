@@ -25,12 +25,25 @@ let y = 4;
 console.log(x + y);
 console.log(x - y);
 console.log(x * (y + y));
+console.log(y + y * x);
+console.log(x * y);
 console.log(x / y);
+console.log(x / 0);
 console.log(0.1 + 0.2);
 console.log((0.1 + 0.2).toFixed(2));
+console.log(x ** y); // Hochzahl (schneller)
+console.log(x % y); //Modulo (=Rest der Division)
 
 let hochzahl = Math.pow(x, y);
 console.log(hochzahl);
 
 let quadratwurzel = Math.sqrt(y);
 console.log(quadratwurzel);
+
+// Boolische Operationen:
+console.log(true && 2 > 3); // && und
+console.log(3 >= 2);
+console.log(false || 1 == 2); // || oder
+console.log(1 == "1");
+console.log(1 === "1");
+console.log(!false); // ! nicht
