@@ -1,4 +1,3 @@
-Ich habe eine Befreiung von dieser Aufgabe bekommen, da ich die Zeit für Scrum-Prüfungsvorbereitung nutzen kann. 
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -15,11 +14,21 @@ Ich habe eine Befreiung von dieser Aufgabe bekommen, da ich die Zeit für Scrum-
             let textfeld = document.getElementById("textfeld")
             textfeld.innerHTML = ""
         }
+        function changeColor() {
+            const bodyDiv = document.getElementById("bodyElement")
+            if (bodyDiv.style.backgroundColor === "red") {
+                bodyDiv.style.backgroundColor = "green";
+            } else {
+                bodyDiv.style.backgroundColor = "green";
+            }
+
+        }
     </script>
 </head>
-<body>
+<body id="bodyElement" style="background-color: white">
     <button onclick="buttonClicked()">Text anzeigen</button>
     <button onclick="deleteText()">Text löschen</button>
+    <button onclick=""changeColor()">Farbe wechseln</button>
     <h1 id="textfeld"></h1>
 </body>
 </html>
