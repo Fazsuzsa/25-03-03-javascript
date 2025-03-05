@@ -15,20 +15,19 @@
             textfeld.innerHTML = ""
         }
         function changeColor() {
-            const bodyDiv = document.getElementById("bodyElement")
+            const bodyDiv = document.getElementById("bodyElement");
             if (bodyDiv.style.backgroundColor === "red") {
                 bodyDiv.style.backgroundColor = "green";
             } else {
-                bodyDiv.style.backgroundColor = "green";
+                bodyDiv.style.backgroundColor = "red";  
             }
-
         }
     </script>
 </head>
 <body id="bodyElement" style="background-color: white">
     <button onclick="buttonClicked()">Text anzeigen</button>
     <button onclick="deleteText()">Text löschen</button>
-    <button onclick=""changeColor()">Farbe wechseln</button>
+    <button onclick="changeColor()">Farbe wechseln</button>
     <h1 id="textfeld"></h1>
 </body>
 </html>
