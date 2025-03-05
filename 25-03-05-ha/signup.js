@@ -4,7 +4,6 @@ function userSignUp() {
   const rePasswordTi = document.getElementById("repasswordti").value;
   const firstName = document.getElementById("firstName").value;
   const familyName = document.getElementById("familyName").value;
-  console.log("My Credentials", emailTI, password);
 
   if (emailTi.length >= 3) {
     if (passwortTi === rePasswordTi) {
@@ -17,7 +16,7 @@ function userSignUp() {
       alert("Die Passwörter stimmen nicht überein!")
     }
   } else {
-    alert("Email ist kürzer alse 3 Zeichen!")
+    alert("Email ist kürzer als 3 Zeichen!")
   }
 }
 
