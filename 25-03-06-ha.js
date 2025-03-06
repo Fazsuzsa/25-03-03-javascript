@@ -29,6 +29,37 @@ function hypotenuse2(a, b) {
     let bPow2 = Math.pow(b, 2);
     let cPow2 = aPow2 + bPow2;
     let c = Math.sqrt(cPow2);
-    return c
+    return c;
 }
 console.log(hypotenuse2(3, 4)) 
+
+// 34. min and max
+// Write a function midrange, that calculates the midrange of 3 numbers.
+// The midrange is the mean of the smallest and largest number.
+function midrange(x, y, z) {
+    let min = Math.min(x, y, z);
+    let max = Math.max(x, y, z);
+    return (min + max) / 2;
+}
+console.log(midrange(3, 9, 1))
+
+// 35. Math.PI
+// Write a function area that calculates the area of a circle. 
+// The function is given the radius of the circle.
+function area(r) {
+    let rPow2 = Math.pow(r, 2);
+    return rPow2 * Math.PI;
+}
+console.log(area(1))
+console.log(area(2))
+
+//36. Rounding
+let a = Math.round(5.49);
+let b = Math.round(4.5);
+let c = Math.floor(5.99);
+let d = Math.ceil(4.01);
+console.log(a)
+console.log(b)
+console.log(c)
+console.log(d)
+// 
