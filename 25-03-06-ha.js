@@ -23,7 +23,7 @@ function hypotenuse(a, b) {
     return Math.sqrt(Math.pow(a, 2) + Math.pow(b, 2));
 }
 console.log(hypotenuse(3, 4)) 
-// oder
+// or
 function hypotenuse2(a, b) {
     let aPow2 = Math.pow(a, 2);
     let bPow2 = Math.pow(b, 2);
@@ -54,12 +54,72 @@ console.log(area(1))
 console.log(area(2))
 
 //36. Rounding
-let a = Math.round(5.49);
-let b = Math.round(4.5);
-let c = Math.floor(5.99);
-let d = Math.ceil(4.01);
+let a = Math.round(5.49); // = 5
+let b = Math.round(4.5); // = 5
+let c = Math.floor(5.99); // = 5
+let d = Math.ceil(4.01); // = 5
 console.log(a)
 console.log(b)
 console.log(c)
 console.log(d)
-// 
+// Write a function round100 that rounds a number to the nearest hundred.
+function round100(number) {
+    let hundredth = number / 100;
+    let roundHundredth = Math.round(hundredth);
+    return roundHundredth * 100;
+}
+console.log(round100(1749))
+console.log(round100(856.12))
+// or
+function roundHundred(number) {
+    return Math.round(number / 100) * 100;
+}
+console.log(roundHundred(1749))
+console.log(roundHundred(856.12))
+
+// 37. random numbers
+// Math.random() returns a pseudo-random number between 0 (inclusive) and 1 (exclusive).
+// Write a function dice that returns like a dice a random number between 1 and 6.
+function dice() {
+    let x = 6 * Math.random();
+    return Math.ceil(x);
+}
+console.log(dice())
+
+// 38. parseInt()
+let nr = parseInt('19', 10); // = 19
+// Write a function add that takes a string with a summation task and returns its result as a number. 
+// Two natural numbers should be added.
+function add(string) {
+    let firstNumber = parseInt(string, 10);
+    let indexPlus = string.indexOf('+'); // indexOf !!
+    let secondString = string.substr(indexPlus + 1); // substring !!
+    let secondNumber = parseInt(secondString, 10);
+    return firstNumber + secondNumber
+}
+console.log(add('102+17'))
+
+// 39. Boolean NAND
+// Write a function nand that takes two Boolean values. 
+// If both values are true, the result should be false. 
+// In the other cases the return should be true.
+function nand(x, y) {
+    let and = x && y;
+    return !and;
+}
+console.log(nand(true, true))
+console.log(nand(true, false))
+console.log(nand(false, true))
+console.log(nand(false, false))
+
+// 40. NOR
+function nor(x, y) {
+    let or = x || y;
+    return !or;
+}
+console.log(nor(true, true))
+console.log(nor(true, false))
+console.log(nor(false, true))
+console.log(nor(false, false))
+
+// 42. XOR
