@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mamazon | Home</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="login.css" />
+    <script src="./login.js"></script>
+  </head>
+
+  <body>
+    <div class="navbarContainer">
+      <div class="navArea navAreaOne">
+        <a href="index.html">
+          <img src="./images/logo.png" class="logoImg" href="impressum.html" />
+        </a>
+        <a class="navBtn" href="impressum.html">impressum</a>
+        <a class="navBtn" href="max.html">max</a>
+      </div>
+      <div class="navArea navAreaTwo">
+        <h2>Mamazon</h2>
+      </div>
+      <div class="navArea navAreaThree">
+        <a class="navBtn" href="login.html">Login</a>
+      </div>
+    </div>
+    <div class="contentContainer">
+      <h1>Login</h1>
+      <input
+        id="emailTextinput"
+        type="email"
+        name="email"
+        inputmode="email"
+        autocomplete="email"
+        class="standardinput"
+        placeholder="Enter your username..."
+      />
+      <input
+        id="passwordTextinput"
+        class="standardinput"
+        secure
+        type="password"
+        placeholder="Enter your password..."
+      />
+
+      <button onclick="onClickLogin()" class="standardbtn">Login</button>
+      <a href="./signup.html"><button class="standardbtn">Signup</button></a>
+    </div>
+
+    <div class="footerContainer"></div>
+  </body>
+</html>
