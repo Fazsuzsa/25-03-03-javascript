@@ -57,6 +57,7 @@ console.log(newArr2)
 // indexOf()
 // Search the array for an element and returns its position
 
+
 const fruits = ["Banana", "Orange", "Apple", "Mango", "Banana", "Orange", "Apple", "Mango"];
 let index = fruits.indexOf("Apple");
 console.log(index)
