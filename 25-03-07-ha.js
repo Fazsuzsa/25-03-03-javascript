@@ -29,9 +29,9 @@ console.log(adult)
 // concat()
 // Joins arrays and returns an array with the joined arrays
 
-const arr1 = ["Cecilie", "Lone"];
-const arr2 = ["Emil", "Tobias"];
-const arr3 = ["Robin", "Linus"];
+const arr1 = ["Panni", "Matyi", "Imre"];
+const arr2 = ["Eszter"];
+const arr3 = ["Zsuzsa", "Lacika"];
 const children2 = arr1.concat(arr2);
 const children3 = arr1.concat(arr2, arr3);
 console.log(children2)
@@ -66,9 +66,18 @@ console.log(index2)
 
 // join()
 // Joins all elements of an array into a string
+const musikanten = ["Esel", "Hund", "Katze", "Hahn"]
+let bremer1 = musikanten.join();
+let bremer2 = musikanten.join(' und ');
+console.log(bremer1)
+console.log(bremer2)
 
 // length
 // Sets or returns the number of elements in an array
+
+const obst = ["Banane", "Orange", "Appfel", "Mango"];
+let laenge = obst.length;
+console.log(laenge);
 
 // map()
 // Creates a new array with the result of calling a function for each array element
@@ -79,17 +88,43 @@ console.log(index2)
 // push()
 // Adds new elements to the end of an array, and returns the new length
 
+const languages = ["Hungarian", "German", "English"];
+let languages2025 = languages.push("Spanish");
+console.log(languages2025); // = 4
+
 // reduce()
 // Reduce the values of an array to a single value (going left-to-right)
 
 // slice()
 // Selects a part of an array, and returns the new array
 
+const alphabet = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "x", "y", "z"];
+let hij = alphabet.slice(7, 10);
+let tux = alphabet.slice(-5, -2);
+console.log(hij);
+console.log(tux);
+
 // sort()
 // Sorts the elements of an array
 
+const einkaufliste = ["Shampoo", "Apfelsaft", "Tee", "Katzenfutter"]
+let alphabetical = einkaufliste.sort();
+console.log(alphabetical);
+
+const preise = [4.99, 5.33, 5.99, 1.99]
+let ascending = preise.sort();
+console.log(ascending);
+console.log(preise); // the sort() method overwrites the original array
+
+
 // splice()
 // 	Adds or Removes array elements
+
+const einkauf = ["Apfelsaft", "Katzenstreu", "Tee"];
+let einkauf2 = einkauf.splice(1, 0, "Shampoo", "Kichererbsen"); // Inserts at index 1
+console.log(einkauf);
+let einkauf3 = einkauf.splice(3, 1, "Katzenfutter"); // Replaces 1 element at index 3
+console.log(einkauf);
 
 // toString()
 // Adds or Removes array elements
