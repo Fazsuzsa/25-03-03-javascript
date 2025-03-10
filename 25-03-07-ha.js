@@ -1,9 +1,9 @@
 // find()
 // Returns the value of the first element in an array that pass a test
 
-const RANDOMNUMBERS = [{nr: 8}, {nr: 4}, {nr: 5}, {nr: 4}];
-const CURRENTITEM = RANDOMNUMBERS.find((item) => item.nr === 4);
-console.log("Current item:", CURRENTITEM);
+const randomNumbers = [{nr: 8}, {nr: 4}, {nr: 5}, {nr: 4}];
+const currentItem = randomNumbers.find((item) => item.nr === 4);
+console.log("Current item:", currentItem);
 
 // findIndex()
 // Returns the index of the first element in an array that pass a test
@@ -25,6 +25,12 @@ function checkAdult(age) {
 }
 
 console.log(adult)
+
+// findIndex()
+// Returns the index of the first element in an array that pass a test
+
+const firstAdult = ages.findIndex(checkAdult);
+console.log(firstAdult) // index 1
 
 // concat()
 // Joins arrays and returns an array with the joined arrays
@@ -50,6 +56,8 @@ console.log(newArr2)
 
 // forEach()
 // Calls a function for each array element
+
+// ICH VERSTEHE NICHT!!
 
 // indexOf()
 // Search the array for an element and returns its position
@@ -78,12 +86,18 @@ console.log(laenge);
 // map()
 // Creates a new array with the result of calling a function for each array element
 
+const myList = [1, 2, 3, 4, 5, 6, 7, 8];
+let mappedList = myList.map((elem) => `<p>${elem}</p>`);
+console.log(mappedList);
+let mappedList2 = myList.map((elem) => elem * 2);
+console.log(mappedList2);
+
 // pop()
 // Removes the last element of an array, and returns that element
 
 const anwesend = ["Alexander", "Christof", "Dennis", "Domske"];
 let removedElement = anwesend.pop();
-console.log(removedElement);
+console.log(removedElement); // Domske
 
 // push()
 // Adds new elements to the end of an array, and returns the new length
@@ -95,11 +109,7 @@ console.log(languages2025); // = 4
 // reduce()
 // Reduce the values of an array to a single value (going left-to-right)
 
-const zahlen = [1, 2, 3, 4, 5];
-
-const summe = zahlen.reduce((acc, zahl) => acc + zahl, 0);
-
-console.log(summe)
+// ICH VERSTEHE NICHT!!
 
 // slice()
 // Selects a part of an array, and returns the new array
@@ -121,7 +131,6 @@ const preise = [4.99, 5.33, 5.99, 1.99]
 let ascending = preise.sort();
 console.log(ascending);
 console.log(preise); // the sort() method overwrites the original array
-
 
 // splice()
 // 	Adds or Removes array elements
