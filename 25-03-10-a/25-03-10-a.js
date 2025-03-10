@@ -10,7 +10,7 @@ function createHTMLList(liste){
     return ergebnis
 }; 
 
-const lehrer = ["Lukas", "Tom", "Kevin", "Suheib"];
+let lehrer = ["Lukas", "Tom", "Kevin", "Suheib"];
 
 function setListContent(){
     let listDiv = document.getElementById("liste")
@@ -37,8 +37,8 @@ function setUserInputList2(){
 }
 
 function setUserInputList3(){
-    let userInput3 = document.getElementById("userInput3")
-    let text = userInput3.value
+    let userInput = document.getElementById("userInput3")
+    let text = userInput.value
     let textList = text.split(",")
     lehrer = lehrer.concat(textList)
     setListContent()
