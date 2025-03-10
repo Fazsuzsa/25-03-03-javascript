@@ -23,5 +23,7 @@ function setUserInputList(){
     let userInput = document.getElementById("userInput")
     let text = userInput.value
     let listDiv = document.getElementById("liste")
-    let 
+    let textList = text.split(",")
+    let content = createHTMLList(textList)
+    listDiv.innerHTML = content
 }

@@ -5,15 +5,6 @@ const randomNumbers = [{nr: 8}, {nr: 4}, {nr: 5}, {nr: 4}];
 const currentItem = randomNumbers.find((item) => item.nr === 4);
 console.log("Current item:", currentItem);
 
-// findIndex()
-// Returns the index of the first element in an array that pass a test
-
-// findLast()
-// Returns the value of the last element in an array that pass a test
-
-// findLastIndex()
-// Returns the index of the last element in an array that pass a test
-
 // filter()
 // Creates a new array with every element in an array that pass a test
 
@@ -29,8 +20,20 @@ console.log(adult)
 // findIndex()
 // Returns the index of the first element in an array that pass a test
 
-const firstAdult = ages.findIndex(checkAdult);
-console.log(firstAdult) // index 1
+const firstAdultIndex = ages.findIndex(checkAdult);
+console.log(firstAdultIndex) // index 1
+
+// findLast()
+// Returns the value of the last element in an array that pass a test
+
+const lastAdult = ages.findLast(checkAdult);
+console.log(lastAdult) // 32
+
+// findLastIndex()
+// Returns the index of the last element in an array that pass a test
+
+const lastAdultIndex = ages.findLastIndex(checkAdult);
+console.log(lastAdultIndex) // index 3
 
 // concat()
 // Joins arrays and returns an array with the joined arrays
