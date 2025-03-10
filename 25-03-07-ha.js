@@ -51,12 +51,8 @@ console.log(newArr2)
 // forEach()
 // Calls a function for each array element
 
-// includes()
-// Check if an array contains the specified element
-
 // indexOf()
 // Search the array for an element and returns its position
-
 
 const fruits = ["Banana", "Orange", "Apple", "Mango", "Banana", "Orange", "Apple", "Mango"];
 let index = fruits.indexOf("Apple");
@@ -85,6 +81,10 @@ console.log(laenge);
 // pop()
 // Removes the last element of an array, and returns that element
 
+const anwesend = ["Alexander", "Christof", "Dennis", "Domske"];
+let removedElement = anwesend.pop();
+console.log(removedElement);
+
 // push()
 // Adds new elements to the end of an array, and returns the new length
 
@@ -94,6 +94,12 @@ console.log(languages2025); // = 4
 
 // reduce()
 // Reduce the values of an array to a single value (going left-to-right)
+
+const zahlen = [1, 2, 3, 4, 5];
+
+const summe = zahlen.reduce((acc, zahl) => acc + zahl, 0);
+
+console.log(summe)
 
 // slice()
 // Selects a part of an array, and returns the new array
@@ -127,4 +133,21 @@ let einkauf3 = einkauf.splice(3, 1, "Katzenfutter"); // Replaces 1 element at in
 console.log(einkauf);
 
 // toString()
-// Adds or Removes array elements
+// Converts an array to a string, and returns the result
+
+const zutatenListe = ["Mehl", "Milch", "Wasser", "Eier"];
+let zutatenString = zutatenListe.toString();
+console.log(zutatenString);
+
+// includes()
+// Check if an array contains the specified element
+
+const zutaten = ["Mehl", "Eier", "Milch", "Wasser"];
+let allergen = zutaten.includes("Eier");
+console.log(allergen); // true
+let allergenPosition1 = zutaten.includes("Eier", 1);
+console.log(allergenPosition1); // true
+let allergenPosition2 = zutaten.includes("Eier", 2);
+console.log(allergenPosition2); // false
+let apfel = zutaten.includes("Apfel");
+console.log(apfel); // false
