@@ -27,3 +27,19 @@ function setUserInputList(){
     let content = createHTMLList(textList)
     listDiv.innerHTML = content
 }
+
+function setUserInputList2(){
+    let userInput = document.getElementById("userInput2")
+    let text = userInput.value
+    let textList = text.split(",")
+    lehrer = textList
+    setListContent()
+}
+
+function setUserInputList3(){
+    let userInput3 = document.getElementById("userInput3")
+    let text = userInput3.value
+    let textList = text.split(",")
+    lehrer = lehrer.concat(textList)
+    setListContent()
+}

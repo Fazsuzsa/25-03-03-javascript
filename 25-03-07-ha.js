@@ -60,6 +60,12 @@ console.log(newArr2)
 // forEach()
 // Calls a function for each array element
 
+const zahlen = [1, 2, 3, 4]
+let malDrei = zahlen.forEach(zahl => console.log(zahl*3))
+console.log(malDrei)
+
+// reduce()
+// Reduce the values of an array to a single value (going left-to-right)
 // ICH VERSTEHE NICHT!!
 
 // indexOf()
@@ -108,11 +114,6 @@ console.log(removedElement); // Domske
 const languages = ["Hungarian", "German", "English"];
 let languages2025 = languages.push("Spanish");
 console.log(languages2025); // = 4
-
-// reduce()
-// Reduce the values of an array to a single value (going left-to-right)
-
-// ICH VERSTEHE NICHT!!
 
 // slice()
 // Selects a part of an array, and returns the new array
