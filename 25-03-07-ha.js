@@ -60,13 +60,23 @@ console.log(newArr2)
 // forEach()
 // Calls a function for each array element
 
-const zahlen = [1, 2, 3, 4]
-let malDrei = zahlen.forEach(zahl => console.log(zahl*3))
-console.log(malDrei)
+const zahlen = [1, 2, 3, 4];
+let malDrei = zahlen.forEach(zahl => console.log(zahl*3));
+console.log(malDrei);
 
 // reduce()
 // Reduce the values of an array to a single value (going left-to-right)
-// ICH VERSTEHE NICHT!!
+function addition(a, b) {
+  return a + b;
+}
+let summe = zahlen.reduce(addition);
+console.log(summe); // = 10
+
+function substraktion(a, b) {
+  return a - b;
+};
+let differenz = zahlen.reduce(substraktion);
+console.log(differenz); // = -8
 
 // indexOf()
 // Search the array for an element and returns its position
