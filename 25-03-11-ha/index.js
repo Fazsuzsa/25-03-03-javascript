@@ -22,8 +22,11 @@ app.get("/content", (req, res) => {
     `);
 });
 
-app.get("/", (req, res) => {
-    res.send("Hello world!");
+app.get("/api/data", (req, res) => {
+    res.json({
+        fullName: "Lukas Probst",
+        age: 29,
+    });
 });
 
 app.listen(3000, () => {
