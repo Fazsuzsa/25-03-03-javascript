@@ -1,4 +1,4 @@
-console-log("Ich komme aus der externen Datei.")
+console.log("Ich komme aus der externen Datei.")
 
 // "let" erstellt ne neue Variable 
 // Datentypen:
