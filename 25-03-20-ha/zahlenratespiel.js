@@ -3,21 +3,15 @@
 // 3. Falls die Zahl zu hoch oder zu niedrig ist, bekommt der Spieler eine entsprechende Rückmeldung.
 // 4. Falls die Zahl richtig ist, erscheint eine Glückwunsch-Nachricht.let name = prompt("Wie heißt du, tapferer Held?");
 
-let zufallszahl = Math.floor(Math.random() * 10) + 1;
-let versuch = 0;
-let geraten = false;
+let number = parseInt(prompt("Enter a guess between 1 and 10:"));
+let randomNumber = Math.floor(Math.random() * 10) + 1;
 
-while (!geraten) {
-    let eingabe = prompt("Gib eine Zahl zwischen 1 und 10 ein:");
-    let zahl = parseInt(eingabe);
-    versuch++;
-
-    if (zahl === zufallszahl) {
-        alert(`Glückwunsch! Du hast die Zahl ${zufallszahl} in ${versuch} Versuchen erraten.`);
-        geraten = true;
-    } else if (zahl < zufallszahl) {
-        alert("Die Zahl ist zu niedrig. Versuch es nochmal!");
-    } else {
-        alert("Die Zahl ist zu hoch. Versuch es nochmal!");
-    }
+if (number === randomNumber) {
+    alert("The guessed number is exactly right!");
+} else if (number < randomNumber && number > 0) {
+    alert(`${randomNumber} is the right number. The guessed number is too low!`);
+} else if (number > randomNumber && number < 11) {
+    alert(`${randomNumber} is the right number. The guessed number is too high!`);
+} else {
+    alert("Invalid number!");
 }
