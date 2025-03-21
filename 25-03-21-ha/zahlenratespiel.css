@@ -2,3 +2,8 @@ body {
     background-color: linen;
     color: purple;
 }
+
+input {
+    width: 250px;
+    color: purple;
+}
