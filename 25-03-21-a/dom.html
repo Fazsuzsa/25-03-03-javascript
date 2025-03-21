@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events und DOM</title>
+</head>
+<body>
+    <h1 id="h1_header">Hier schauen wir uns Events und DOM-Manipulation an</h1> 
+    <button onclick="headerSyleChange()">style ändern</button>
+    <button onclick="changeFontSize(50)">fontsize ändern</button>
+    <br />
+    <button id="onClick">on click</button>
+    <button id="onMouseOver">on mouse over</button>
+    <button id="onWheel">on wheel</button>
+    <button id="onMouseLeave">on mouse leave</button>
+    <br />
+    <input id="inputField" placeholder="Schreib etwas.." />
+    <button onclick="showInputValue()">Inhalt ausgeben</button> 
+    <p id="ausgabefeld">test</p>
+    <script src="dom.js"></script>
+</body>
+</html>
