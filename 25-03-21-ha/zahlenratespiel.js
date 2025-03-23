@@ -1,7 +1,7 @@
-let number = parseInt(document.getElementById("inputField").value);
 let randomNumber = Math.floor(Math.random() * 10) + 1;
 
 function guessingGame() {
+  let number = parseInt(document.getElementById("inputField").value);
   let outputField = document.getElementById("outputField");
   if (number === randomNumber) {
     outputField.textContent = "The guessed number is exactly right!";
