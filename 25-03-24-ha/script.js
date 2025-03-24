@@ -5,7 +5,10 @@ const preisInput = document.getElementById("preis");
 const liste = document.getElementById("liste");
 const gesamt = document.getElementById("gesamt");
 const clearButton = document.getElementById("clearButton");
+const LightDarkModeButton = document.getElementById("lightDarkModeButton");
+
 let gesamtPreis = 0;
+
 addButton.addEventListener("click", () => {
   const artikel = artikelInput.value;
   const anzahl = anzahlInput.value;
@@ -53,3 +56,7 @@ addButton.addEventListener("click", () => {
 function updatePreis() {
   gesamt.textContent = `Gesamt: ${gesamtPreis}€`;
 }
+
+LightDarkModeButton.addEventListener("click", () => {
+  document.body.classList.toggle("lightDarkModeButton");
+});

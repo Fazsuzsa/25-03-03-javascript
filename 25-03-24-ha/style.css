@@ -12,7 +12,7 @@ input {
     width: 200px;
 }
 
-#clearButton, #addButton {
+#clearButton, #addButton, #lightDarkModeButton {
     width: 200px;
     background-color: darkolivegreen;
     color: wheat;
@@ -21,4 +21,9 @@ input {
 button {
     margin: 5px;
     
+}
+
+.darkmode {
+    background-color: black;
+    color: white;
 }
