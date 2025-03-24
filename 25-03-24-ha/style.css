@@ -12,7 +12,7 @@ input {
     width: 200px;
 }
 
-#addbutton {
+#clearButton, #addButton {
     width: 200px;
     background-color: darkolivegreen;
     color: wheat;

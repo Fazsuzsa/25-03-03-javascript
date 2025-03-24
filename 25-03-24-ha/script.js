@@ -1,17 +1,15 @@
-const addButton = document.getElementById("addbutton");
-const artikelInnput = document.getElementById("artikel");
+const addButton = document.getElementById("addButton");
+const artikelInput = document.getElementById("artikel");
 const anzahlInput = document.getElementById("anzahl");
 const preisInput = document.getElementById("preis");
 const liste = document.getElementById("liste");
 const gesamt = document.getElementById("gesamt");
-
+const clearButton = document.getElementById("clearButton");
 let gesamtPreis = 0;
-
 addButton.addEventListener("click", () => {
-  const artikel = artikelInnput.value;
+  const artikel = artikelInput.value;
   const anzahl = anzahlInput.value;
   const preis = preisInput.value;
-
   let isValid = true;
   if (!artikel) {
     artikelInput.style.border = "2px solid red";
@@ -19,46 +17,39 @@ addButton.addEventListener("click", () => {
   } else {
     artikelInput.style.border = "";
   }
-
-  //neues Element erstellen und in die Liste einfügen
-  const newLi = document.createElement("li");
-  newLi.textContent = `${anzahl} x ${artikel}: ${preis}€/St. --- ${
+  // Neues Element erstellen und in die Liste einfügen
+  const new_li = document.createElement("li");
+  new_li.textContent = `${anzahl} x ${artikel}: ${preis}€ p.P. ------ ${
     anzahl * preis
   }€`;
-
-  //füge einen Check button hinzu
   const checkBox = document.createElement("input");
   checkBox.type = "checkbox";
-  checkBox.addEventListener("change", () => {
-    if (checkBox.checked) {
-      newLi.style.textDecoration = "line-through";
-    } else {
-      newLi.style.textDecoration = "none";
-    }
+  checkBox.addEventListener("change", () => {});
+  clearButton.addEventListener("click", () => {
+    liste.innerHTML = "";
+    gesamtPreis = 0;
+    updatePreis();
   });
-  //füge einen Löschen button hinzu
+  // Füge einen Löschen Button hinzu
   const deleteButton = document.createElement("button");
-  deleteButton.textContent = "❌";
+  deleteButton.textContent = ":x:";
   deleteButton.addEventListener("click", () => {
-    liste.removeChild(newLi);
+    liste.removeChild(new_li);
     gesamtPreis -= anzahl * preis;
     updatePreis();
   });
+  new_li.remove(clearButton);
   new_li.prepend(checkBox);
-  newLi.appendChild(deleteButton);
-
-  liste.appendChild(newLi);
-
-  //Gesamtpreis aktualisieren
+  new_li.appendChild(deleteButton);
+  liste.appendChild(new_li);
+  // Gesamtpreis aktualisieren
   gesamtPreis += anzahl * preis;
   updatePreis();
-
-  //Inputfelder leeren
+  // Inputfelder leeren
   artikelInput.value = "";
   anzahlInput.value = "";
   preisInput.value = "";
 });
-
 function updatePreis() {
   gesamt.textContent = `Gesamt: ${gesamtPreis}€`;
 }
