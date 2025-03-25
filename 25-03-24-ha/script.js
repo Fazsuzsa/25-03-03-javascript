@@ -5,7 +5,7 @@ const preisInput = document.getElementById("preis");
 const liste = document.getElementById("liste");
 const gesamt = document.getElementById("gesamt");
 const clearButton = document.getElementById("clearButton");
-const LightDarkModeButton = document.getElementById("lightDarkModeButton");
+const lightDarkModeButton = document.getElementById("lightDarkModeButton");
 
 let gesamtPreis = 0;
 
@@ -35,7 +35,7 @@ addButton.addEventListener("click", () => {
   });
   // Füge einen Löschen Button hinzu
   const deleteButton = document.createElement("button");
-  deleteButton.textContent = ":x:";
+  deleteButton.textContent = "❌";
   deleteButton.addEventListener("click", () => {
     liste.removeChild(new_li);
     gesamtPreis -= anzahl * preis;
@@ -56,7 +56,6 @@ addButton.addEventListener("click", () => {
 function updatePreis() {
   gesamt.textContent = `Gesamt: ${gesamtPreis}€`;
 }
-
-LightDarkModeButton.addEventListener("click", () => {
-  document.body.classList.toggle("lightDarkModeButton");
+lightDarkModeButton.addEventListener("click", () => {
+  document.body.classList.toggle("darkmode");
 });

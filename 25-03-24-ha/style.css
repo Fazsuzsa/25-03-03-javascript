@@ -10,20 +10,33 @@ h1, h5 {
 input {
     margin: 5px;
     width: 200px;
+    color: purple;
 }
 
-#clearButton, #addButton, #lightDarkModeButton {
-    width: 200px;
-    background-color: darkolivegreen;
-    color: wheat;
-}
-
-button {
-    margin: 5px;
+#clearButton, #addButton {
     
+    background-color: purple;
+    color: white;
+}
+
+#addButton, #clearButton {
+    margin: 5px; 
+    width: 200px;
+}
+
+#lightDarkModeButton {
+    background-color: black;
+    color: white;
+    margin: 5px;
+    width: 100px;
 }
 
 .darkmode {
     background-color: black;
     color: white;
+    #lightDarkModeButton, input {
+        background-color: white;
+        color: purple;
+    }
+
 }
