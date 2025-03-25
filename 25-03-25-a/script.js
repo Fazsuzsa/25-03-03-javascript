@@ -20,6 +20,7 @@ function searchCharacter() {
 
 const button = document.getElementById("searchButton");
 button.addEventListener("click", searchCharacter);
+
 fetch("https://swapi.dev/api/people/1/")
   .then((res) => res.json())
   .then((data) => {

@@ -1,29 +1,22 @@
-document.addEventListener("DOMContentLoaded", () => {
-  const output = document.getElementById("output");
-  const button = document.getElementById("searchButton");
+const output = document.getElementById("output");
 
-  function fetchWeather() {
-    const location = document.getElementById("userInput").value;
-    if (!location) {
-      output.innerHTML = "Bitte einen Ort eingeben.";
-      return;
-    }
+function searchWeather() {
+  const input = document.getElementById("userInput").value;
 
-    fetch(`https://wttr.in/${location}?format=%C+%t`)
-      .then((response) => response.text())
-      .then((data) => {
-        const [condition, temperature] = data.split(" ");
-        output.innerHTML = `<h2>Wetter in ${location}</h2>
-                                   <p>Bedingung: ${condition}</p>
-                                   <p>Temperatur: ${temperature}</p>`;
-      })
-      .catch((error) => {
-        output.innerHTML = "Fehler beim Abrufen der Wetterdaten.";
-      });
-  }
+  fetch(`https://wttr.in/${input}?format=j1`)
+    .then((res) => res.json)
+    .then((data) => {
+      const temperature = data.current_condition[0].temp_C;
+      const description = data.current_condition[0].weatherDesc[0].value;
+      const condition = document.createElement("p");
+      condition.innerText = `Temperatur: ${temperature}°C, Beschreibung: ${description}`;
+      output.innerHTML = `<h4>Wetter in ${input}:</h4>`;
+      output.appendChild(condition);
+    });
+}
 
-  button.addEventListener("click", fetchWeather);
-});
+const button = document.getElementById("searchButton");
+button.addEventListener("click", searchWeather);
 
 // Schreibt eine Website, die Daten von APIs holt und diese auf einer Website darstellt:
 // Mindestens zwei verschiedene API calls sollen benutzt werden
@@ -31,9 +24,7 @@ document.addEventListener("DOMContentLoaded", () => {
 // Bsp.: Baut mit wttr.in eine kleine Wettervorhersage (Suchfeld für den Ort, Ausgabe der Temperatur und der Wetterbeschreibung)
 // https://wttr.in/${place}?format=%C+%t
 
-// <input type="text" id="userInput" placeholder="Gib eine Stadt ein"/>
-// <button id="searchButton">Wetterbericht</button>
-// <div id="output"></div>
+// python
 
 // import requests
 
