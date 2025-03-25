@@ -1,10 +1,11 @@
 body {
     display: flex;
     flex-direction: column;
+    justify-self: center;
 }
 
 h1, h5 {
-    margin: 5px;
+    margin: 5px; 
 }
 
 input {
