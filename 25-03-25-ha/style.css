@@ -1,0 +1,11 @@
+body {
+    display: flex;
+    flex-direction: column;
+    justify-self: center;
+}
+
+input, button {
+    margin: 5px;
+    width: 200px;
+    color: purple;
+}
