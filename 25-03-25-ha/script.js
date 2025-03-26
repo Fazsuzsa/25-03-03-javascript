@@ -4,14 +4,14 @@ function searchWeather() {
   const input = document.getElementById("userInput").value;
 
   fetch(`https://wttr.in/${input}?format=j1`)
-    .then((res) => res.json)
+    .then((res) => res.json())
     .then((data) => {
       const temperature = data.current_condition[0].temp_C;
-      const description = data.current_condition[0].weatherDesc[0].value;
-      const condition = document.createElement("p");
-      condition.innerText = `Temperatur: ${temperature}°C, Beschreibung: ${description}`;
+      const condition = data.current_condition[0].weatherDesc[0].value;
+      const description = document.createElement("p");
+      description.innerText = `Temperatur: ${temperature}°C, Bedingungen: ${condition}`;
       output.innerHTML = `<h4>Wetter in ${input}:</h4>`;
-      output.appendChild(condition);
+      output.appendChild(description);
     });
 }
 
