@@ -12,7 +12,9 @@ app.get("/tiere", (req, res) => {
 
 app.get("/tiere/search", (req, res) => {
   const art = req.query.art;
-  const result = tiere.filter((tier) => tier.art == art);
+  const result = tiere.filter(
+    (tier) => tier.art.toLowerCase() == art.toLowerCase()
+  );
   res.json(result);
 }); // Filtert nach einer Tierart (z. B. Hund, Katze)
 
