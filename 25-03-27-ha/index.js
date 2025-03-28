@@ -29,7 +29,21 @@ app.get("/tiere/:id", (req, res) => {
   }
 }); // Gibt nur das Tier mit der angegebenen ID zurück
 
-//POST /tiere // Fügt ein neues Tier zur Liste hinzu (über JSON-Body)
+app.use(express.json());
+
+app.post("/tiere", (req, res) => {
+  const { name, art, alter } = req.body;
+  const newAnimal = {
+    id: tiere.length + 1,
+    name: name,
+    art: art,
+    alter: alter,
+  };
+
+  tiere.push(newAnimal);
+
+  res.json(tiere);
+}); // Fügt ein neues Tier zur Liste hinzu (über JSON-Body)
 
 app.listen(3000, () => {
   console.log("Server läuft auf http://localhost:3000");
