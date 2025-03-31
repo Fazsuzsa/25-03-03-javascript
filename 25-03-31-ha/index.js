@@ -1,7 +1,13 @@
 const express = require("express");
+const cors = require("cors");
 const app = express();
 const fs = require("fs");
 app.use(express.json());
+app.use(
+  cors({
+    origin: "http://localhost:3000",
+  })
+);
 
 function readFile() {
   const data = fs.readFileSync("books.json", "utf-8");
@@ -13,8 +19,12 @@ function writeFile(data) {
 }
 
 app.get("/books", (req, res) => {
-  const books = readFile();
-  res.json(books);
+  try {
+    const books = readFile();
+    res.json(books);
+  } catch (err) {
+    res.status(500).json({ error: `Internal Server Error: ${err}` });
+  }
 });
 
 app.post("/books", (req, res) => {
@@ -35,13 +45,17 @@ app.post("/books", (req, res) => {
 });
 
 app.put("/books/:id", (req, res) => {
-  const id = req.params.id;
-  const books = readFile();
-  const newTitle = req.body.title;
-  const foundBook = books.find((book) => book.id == id);
-  foundBook.Title = newTitle;
-  res.json(foundTitle);
-  writeFile(books);
+  try {
+    const id = req.params.id;
+    const books = readFile();
+    const newTitle = req.body.title;
+    const foundBook = books.find((book) => book.id == id);
+    foundBook.Title = newTitle;
+    res.json(foundTitle);
+    writeFile(books);
+  } catch (err) {
+    res.status(500).json({ error: "Internal Server error!" });
+  }
 });
 
 app.delete("/books/:id", (req, res) => {
