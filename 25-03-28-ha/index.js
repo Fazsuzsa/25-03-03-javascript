@@ -22,7 +22,7 @@ app.post("/books", (req, res) => {
   const { title, author } = req.body;
   if (title && author) {
     const newBook = {
-      id: books.legth + 1,
+      id: books.length + 1,
       title: title,
       author: author,
     };
