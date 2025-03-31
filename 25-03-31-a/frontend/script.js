@@ -1,16 +1,16 @@
 const submitButton = document.getElementById("submitButton");
-const nameInput = document.getElementById("name");
-const artInput = document.getElementById("art");
+const titleInput = document.getElementById("title");
+const authorInput = document.getElementById("author");
 const antwortFeld = document.getElementById("antwort");
 
 submitButton.addEventListener("click", () => {
   try {
     const requestBody = {
-      name: nameInput.value,
-      art: artInput.value,
+      title: titleInput.value,
+      author: authorInput.value,
     };
 
-    fetch("http://localhost:5005/tiere", {
+    fetch("http://localhost:3000/books", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(requestBody),
@@ -26,7 +26,7 @@ submitButton.addEventListener("click", () => {
 });
 
 window.onload = () => {
-  fetch("http://localhost:5005/tiere")
+  fetch("http://localhost:3000/books")
     .then((res) => res.json())
     .then((data) => {
       antwortFeld.innerText = JSON.stringify(data);
