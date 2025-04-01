@@ -5,7 +5,7 @@ const fs = require("fs");
 app.use(express.json());
 app.use(
   cors({
-    origin: "http://localhost:5050",
+    origin: "http://localhost:5500",
   })
 );
 
