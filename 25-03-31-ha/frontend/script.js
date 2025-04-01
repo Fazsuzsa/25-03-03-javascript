@@ -5,7 +5,7 @@ submitButton.addEventListener("click", () => {
       author: authorInput.value,
     };
 
-    fetch("http://localhost:3000/books", {
+    fetch("http://localhost:5005/books", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(requestBody),
@@ -21,7 +21,7 @@ submitButton.addEventListener("click", () => {
 });
 
 window.onload = () => {
-  fetch("http://localhost:3000/books")
+  fetch("http://localhost:5005/books")
     .then((res) => res.json())
     .then((data) => {
       antwortFeld.innerText = JSON.stringify(data);
