@@ -81,4 +81,15 @@ app.put("/tiere/:id", (req, res) => {
   );
 });
 
+app.delete("/tiere/:id", (req, res) => {
+  const id = req.params.id;
+  db.run(`DELETE FROM tiere WHERE id = ?`, [id], (err) => {
+    if (err) {
+      res.status(404).send("Fehler in deiner Delete Anfrage!");
+    } else {
+      res.send("Tier wurde gelöscht!");
+    }
+  });
+});
+
 app.listen(3000);
