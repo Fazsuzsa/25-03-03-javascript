@@ -54,4 +54,15 @@ app.post("/tiere", (req, res) => {
   res.status(201).send("Tier wurde erfolgreich hinzugefügt!");
 });
 
+app.get("/tiere/:id", (req, res) => {
+  const id = req.params.id;
+  db.all(`SELECT * FROM tiere WHERE id = ?`, [id], (err, rows) => {
+    if (err) {
+      res.status(404).send("Fehler in deiner Query Anfrage!");
+    } else {
+      res.json(rows);
+    }
+  });
+});
+
 app.listen(3000);
