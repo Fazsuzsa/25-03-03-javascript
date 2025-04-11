@@ -65,4 +65,20 @@ app.get("/tiere/:id", (req, res) => {
   });
 });
 
+app.put("/tiere/:id", (req, res) => {
+  const { tierart, name, krankheit, age, gewicht } = req.body;
+  const id = req.params.id;
+  db.run(
+    `UPDATE tiere SET tierart = ?, name = ?, krankheit = ?, age = ?, gewicht = ? WHERE id = ?`,
+    [tierart, name, krankheit, age, gewicht, id],
+    (err) => {
+      if (err) {
+        res.status(404).send("Fehler in deiner Update Anfrage!");
+      } else {
+        res.send("Tier wurde geändert!");
+      }
+    }
+  );
+});
+
 app.listen(3000);
