@@ -20,7 +20,7 @@ addButton.addEventListener("click", () => {
 
   // Füge einen Löschen Button hinzu
   const deleteButton = document.createElement("button");
-  deleteButton.textContent = "❌";
+  deleteButton.textContent = "Löschen";
   deleteButton.addEventListener("click", () => {
     liste.removeChild(new_li);
     gesamtPreis -= anzahl * preis;

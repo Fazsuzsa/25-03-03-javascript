@@ -3,12 +3,12 @@ const app = express();
 const fs = require("fs");
 app.use(express.json()); // unsere Milddleware, die uns ermöglicht ...
 
-// Hilfsfunktion
+// Hilfsfunktion 1
 function readFile() {
   const data = fs.readFileSync("tiere.json", "utf-8");
   return JSON.parse(data); // JSON.parse erstellt ein Javascript Object aus der JSON Datei
 }
-
+// Hilfsfunktion 2
 function writeFile(data) {
   fs.writeFileSync("tiere.json", JSON.stringify(data, null, 2));
 }
@@ -41,7 +41,7 @@ app.put("/tiere/:id", (req, res) => {
   const newArt = req.body.art;
   const foundTier = tiere.find((tier) => tier.id == id);
   foundTier.art = newArt;
-  res.json(foundArt);
+  res.json(foundTier);
   writeFile(tiere); // in Datei reinschreiben
 });
 

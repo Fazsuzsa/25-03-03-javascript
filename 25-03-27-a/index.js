@@ -1,7 +1,7 @@
 const express = require("express");
 const app = express();
-const giveMeAJoke = require("give-me-a-joke");
-
+// const giveMeAJoke = require("give-me-a-joke");
+app.use(express.json()); // -> Ermöglicht, dass ein Body über den Request mitgeschickt wird
 //CRUD
 // C = Create -> Erstellen ->> Post
 // R = Read -> Lesen ->> GET
@@ -63,21 +63,20 @@ app.get("/users/search", (req, res) => {
 app.get("/users/:id", (req, res) => {
   const id = req.params.id;
   const foundUser = users.find((user) => user.id == id);
-
+  // if foundUser != undefined, kurz geschrieben:
   if (foundUser) {
     res.json(foundUser);
   } else {
     res.status(404).send("User mit deiner ID nicht gefunden. ID: " + id);
   }
 });
-app.use(express.json()); // -> Ermöglicht, dass ein Body über den Request mitgeschickt wird
 
 app.post("/users", (req, res) => {
-  const { city, name } = req.body; // Destructuring
+  const { newCity, newName } = req.body; // Destructuring
   const newUser = {
     id: users.length + 1,
-    name: name,
-    city: city,
+    name: newName,
+    city: newCity,
   };
 
   users.push(newUser);
