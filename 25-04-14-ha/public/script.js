@@ -26,3 +26,10 @@ buttonShowAnimals.addEventListener("click", async () => {
     });
   }
 });
+
+const tierart = document.getElementById("inputTierart");
+const name = document.getElementById("inputName");
+const krankheit = document.getElementById("inputKrankheit");
+const age = document.getElementById("inputAge");
+const gewicht = document.getElementById("inputGewicht");
+const antwort = document.getElementById("antwort");
