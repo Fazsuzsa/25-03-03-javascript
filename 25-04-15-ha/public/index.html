@@ -1,69 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <link rel="stylesheet" href="style.css" />
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tierheim</title>
+    <link rel="stylesheet" href="style.css">
     <script src="script.js" defer></script>
-  </head>
-  <body>
-    <header>
-      <button>Home</button>
-      <button id="buttonShowAnimals">Tiere Anzeigen</button>
-      <button id="showAddAnimalForm">Tier hinzufügen</button>
-    </header>
+</head>
+<body>
+    <h1>Tierheim</h1>
+    <input id="inputTierart" type="text" placeholder="Tierart"/><br>
+    <input id="inputName" type="text" placeholder="Name"/><br>
+    <input id="inputKrankheit" type="text" placeholder="Krankheit"/><br>
+    <input id="inputAge" type="number" placeholder="Alter"/><br>
+    <input id="inputGewicht" type="number" placeholder="Gewicht"/><br>
+    <button id="button_add_animal">Tier hinzufügen</button>
+    <div id="antwort"></div>
+    <button id="button_show_animals">Tiere anzeigen</button>
+    <ul id="show_animals"></ul>
 
-    <div>
-      <h1>Happy Pets</h1>
-      <h2>Die erste Klinik von Tieren für Tiere</h2>
-      <hr />
-      <div id="content">
-        <img
-          src="https://independent-animal-clinic.com/cdn/shop/files/slider4.jpg?v=1704046978&width=3840"
-          alt="bild"
-        />
-      </div>
-    </div>
-
-
-    <form id="addTierForm" hidden>
-        <label>
-            Tierart:
-            <input type="text" name="tierart" required>
-        </label>
-        <label>
-            Name:
-            <input type="text" name="name" required>
-        </label>
-        <label>
-            Krankheit:
-            <input type="text" name="krankheit" required>
-        </label>
-        <label>
-            Alter:
-            <input type="number" name="age" required>
-        </label>
-        <label>
-            Gewicht:
-            <input type="number" name="gewicht" step="0.1" required>
-        </label>
-        <button type="submit">Hinzufügen</button>
-    </form>
-
-    <table id="table">
-        <thead>
-            <tr>
-                <th>Tierart</th>
-                <th>Name</th>
-                <th>Krankheit</th>
-                <th>Alter</th>
-                <th>Gewicht</th>
-                <th>Optionen</th>
-            </tr>
-        </thead>
-
-        <tbody id="showAnimals"></tbody>
-    </table>
-  </body>
-</html>
+</body>
+</html>       
