@@ -4,14 +4,18 @@ import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import Titel from "./Titel";
-import TitelCard from "./TitelCard";
+import TierCard from "./TierCard";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
     <App />
     <Titel />
-    <TitelCard />
+    <TierCard name="Leo" art="Löwe" krankheit="Zahnentzündung" />{" "}
+    <TierCard name="Bella" art="Katze" krankheit="Nierenschwäche" />{" "}
+    <TierCard name="Max" art="Hund" krankheit="Arthrose" />{" "}
+    <TierCard name="Lilli" art="Kaninchen" krankheit="Schnupfen" />{" "}
+    <TierCard name="Coco" art="Papagei" krankheit="Federverlust" />
   </React.StrictMode>
 );
 
