@@ -4,7 +4,7 @@ import "./App.css";
 function App() {
   return (
     <>
-      <h1>Unsere Tiere</h1>
+      <h1>Hausaufgabe 16.04.2025</h1>
     </>
   );
 }
