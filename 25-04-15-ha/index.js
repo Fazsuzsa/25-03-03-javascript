@@ -1,5 +1,6 @@
 const express = require("express");
 const app = express();
+// const sqlite3 = require("sqlite3");
 const { Pool } = require("pg");
 require("dotenv").config();
 
@@ -10,6 +11,8 @@ const pool = new Pool({
   password: process.env.DB_PASSWORD, // Dein Passwort
   port: process.env.DB_PORT, // Standardport für PostgreSQL
 });
+
+// const db = new sqlite3.Database("tiere.db");
 
 const createTable = async () => {
   const client = await pool.connect();
@@ -41,20 +44,23 @@ app.get("/tiere", async (req, res) => {
   res.json(result.rows);
 });
 
-app.post("/tiere", async (req, res) => {
+app.post("/tiere", (req, res) => {
   const { tierart, name, krankheit, age, gewicht } = req.body;
-  await pool.query(
-    `INSERT INTO tiere (tierart, name, krankheit, age, gewicht)
-     VALUES ($1, $2, $3, $4, $5)`,
+  db.run(
+    `INSERT INTO tiere (tierart,name,krankheit,age,gewicht) VALUES(?,?,?,?,?)`,
     [tierart, name, krankheit, age, gewicht]
   );
   res.status(201).send("Tier wurde erfolgreich hinzugefügt");
 });
 
-// app.delete("/tiere/:id", (req, res) => {
-//   const id = req.params.id;
-//   db.run(`DELETE FROM tiere WHERE id = ?`, [id]);
-//   res.send("Eintrag gelöscht");
-// });
+app.delete("/tiere/:id", async (req, res) => {
+  const id = req.params.id;
+  try {
+    const result = await pool.query("DELETE FROM tiere WHERE id = $1", [id]);
+    res.send("Tier wurde gelöscht.");
+  } catch (err) {
+    console.log(err);
+  }
+});
 
 app.listen(3000);
