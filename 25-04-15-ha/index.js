@@ -44,10 +44,11 @@ app.get("/tiere", async (req, res) => {
   res.json(result.rows);
 });
 
-app.post("/tiere", (req, res) => {
+app.post("/tiere", async (req, res) => {
   const { tierart, name, krankheit, age, gewicht } = req.body;
-  db.run(
-    `INSERT INTO tiere (tierart,name,krankheit,age,gewicht) VALUES(?,?,?,?,?)`,
+  await pool.query(
+    `INSERT INTO tiere (tierart, name, krankheit, age, gewicht)
+     VALUES ($1, $2, $3, $4, $5)`,
     [tierart, name, krankheit, age, gewicht]
   );
   res.status(201).send("Tier wurde erfolgreich hinzugefügt");

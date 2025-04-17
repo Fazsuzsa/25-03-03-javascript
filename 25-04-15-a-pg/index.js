@@ -51,10 +51,4 @@ app.post("/tiere", async (req, res) => {
   res.status(201).send("Tier wurde erfolgreich hinzugefügt");
 });
 
-// app.delete("/tiere/:id", (req, res) => {
-//   const id = req.params.id;
-//   db.run(`DELETE FROM tiere WHERE id = ?`, [id]);
-//   res.send("Eintrag gelöscht");
-// });
-
 app.listen(3000);
