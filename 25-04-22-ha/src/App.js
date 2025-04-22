@@ -1,6 +1,7 @@
 import logo from "./logo.svg";
 import "./App.css";
 import Listing from "./Listing";
+import { Link } from "react-router-dom";
 
 function App() {
   const days = [
@@ -87,7 +88,13 @@ function App() {
   ];
   return (
     <div className="contentContainer">
-      <nav></nav>
+      <nav className="navContainer">
+        <Link to="/">Home</Link>
+        <Link to="/map">Karte</Link>
+        <Link to="/accomodation">Unterkunft</Link>
+        <Link to="/contact">Kontakt</Link>
+        <Link to="/impressum">Impressum</Link>
+      </nav>
       {days.map((day) => (
         <Listing
           key={day.id}
