@@ -1,0 +1,12 @@
+.listing {
+    border: 1px dotted darkolivegreen;
+    padding: 10px;
+    border-radius: 5px;
+    width: 355px;
+    background-color: lightgray;
+    transition: transform 0.5s;
+  }
+  
+  .listing:hover {
+    transform: scale(1.1);
+  }
