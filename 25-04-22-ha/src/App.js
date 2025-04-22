@@ -87,6 +87,7 @@ function App() {
   ];
   return (
     <div className="contentContainer">
+      <nav></nav>
       {days.map((day) => (
         <Listing
           key={day.id}
