@@ -1,7 +1,15 @@
 import React from "react";
+import Nav from "./Nav";
 
 function Contact() {
-  return <div>Hallo aus "Contact"</div>;
+  return (
+    <>
+      <Nav></Nav>
+      <div>
+        <p>Hallo aus "Kontakt"</p>
+      </div>
+    </>
+  );
 }
 
 export default Contact;

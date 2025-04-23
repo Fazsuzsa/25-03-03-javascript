@@ -1,7 +1,13 @@
 import React from "react";
+import Nav from "./Nav";
 
 function Map() {
-  return <div>Hallo aus "Map"</div>;
+  return (
+    <>
+      <Nav></Nav>
+      <div>Hallo aus "Karte"</div>
+    </>
+  );
 }
 
 export default Map;
