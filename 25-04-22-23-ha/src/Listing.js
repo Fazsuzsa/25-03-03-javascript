@@ -7,7 +7,7 @@ function Listing(props) {
       <img height="200px" src={props.image}></img>
       <h2>{props.name}</h2>
       <p>
-        {props.laenge} km / {props.oben} m ↑ / {props.unten} m ↓
+        <b>{props.laenge} km</b> / {props.oben} m ↑ / {props.unten} m ↓
       </p>
     </div>
   );
