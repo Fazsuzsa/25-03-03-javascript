@@ -1,9 +1,9 @@
 .listing {
-    border: 1px dotted darkolivegreen;
+    border: 1px solid darkolivegreen;
     padding: 10px;
     border-radius: 5px;
     width: 355px;
-    background-color: lightgray;
+    background-color: darkolivegreen;
     transition: transform 0.5s;
   }
   

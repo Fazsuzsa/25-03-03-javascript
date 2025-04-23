@@ -7,8 +7,8 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 import Map from "./Map";
 import Accomodation from "./Accomodation";
+import Wetter from "./Wetter";
 import Contact from "./Contact";
-import Impressum from "./Impressum";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
@@ -21,8 +21,8 @@ root.render(
           path="/accomodation"
           element={<Accomodation></Accomodation>}
         ></Route>
+        <Route path="/weather" element={<Wetter></Wetter>}></Route>
         <Route path="/contact" element={<Contact></Contact>}></Route>
-        <Route path="/impressum" element={<Impressum></Impressum>}></Route>
       </Routes>
     </Router>
   </React.StrictMode>

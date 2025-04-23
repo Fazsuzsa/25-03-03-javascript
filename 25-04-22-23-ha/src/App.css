@@ -1,13 +1,6 @@
 .contentContainer {
   display: flex;
   flex-wrap: wrap;
-  gap: 10px;
-  justify-content: center;
-}
-
-.navContainer {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
+  gap: 20px;
   justify-content: center;
 }

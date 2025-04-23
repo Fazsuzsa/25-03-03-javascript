@@ -1,6 +1,7 @@
 import logo from "./logo.svg";
 import "./App.css";
 import Listing from "./Listing";
+import Nav from "./Nav";
 import { Link } from "react-router-dom";
 
 function App() {
@@ -87,25 +88,21 @@ function App() {
     },
   ];
   return (
-    <div className="contentContainer">
-      <nav className="navContainer">
-        <Link to="/">Home</Link>
-        <Link to="/map">Karte</Link>
-        <Link to="/accomodation">Unterkunft</Link>
-        <Link to="/contact">Kontakt</Link>
-        <Link to="/impressum">Impressum</Link>
-      </nav>
-      {days.map((day) => (
-        <Listing
-          key={day.id}
-          name={day.name}
-          laenge={day.laenge}
-          oben={day.oben}
-          unten={day.unten}
-          image={day.image}
-        ></Listing>
-      ))}
-    </div>
+    <>
+      <Nav></Nav>
+      <div className="contentContainer">
+        {days.map((day) => (
+          <Listing
+            key={day.id}
+            name={day.name}
+            laenge={day.laenge}
+            oben={day.oben}
+            unten={day.unten}
+            image={day.image}
+          ></Listing>
+        ))}
+      </div>
+    </>
   );
 }
 
