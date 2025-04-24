@@ -8,7 +8,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Map from "./Map";
 import Accomodation from "./Accomodation";
 import Wetter from "./Wetter";
-import Placeholder from "./Placeholder";
+import Pokemon from "./Pokemon";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
@@ -22,10 +22,7 @@ root.render(
           element={<Accomodation></Accomodation>}
         ></Route>
         <Route path="/weather" element={<Wetter></Wetter>}></Route>
-        <Route
-          path="/placeholder"
-          element={<Placeholder></Placeholder>}
-        ></Route>
+        <Route path="/pokemon" element={<Pokemon></Pokemon>}></Route>
       </Routes>
     </Router>
   </React.StrictMode>

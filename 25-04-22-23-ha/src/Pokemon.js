@@ -1,13 +1,16 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import Nav from "./Nav";
+import PokeCard from "./PokeCard";
+import { Link } from "react-router-dom";
 
-function Posts() {
+function Pokemon() {
   const [pokemons, setPokemons] = useState([]);
 
   useEffect(() => {
     const urlListe = [];
     async function getPokemons() {
       const res = await fetch(
-        "https://pokeapi.co/api/v2/pokemon?offset=0&limit=20"
+        "https://pokeapi.co/api/v2/pokemon?offset=0&limit=10"
       );
       const data = await res.json();
       data.results.forEach((element) => {
@@ -26,7 +29,7 @@ function Posts() {
       <Link to="/">Home</Link>
       <div className="containerList">
         {pokemons.map((pokemon) => (
-          <PokemonCard
+          <PokeCard
             key={pokemon.id}
             id={pokemon.id}
             image={pokemon.sprites.front_default}
@@ -34,10 +37,11 @@ function Posts() {
             Gewicht={pokemon.weight}
             Groesse={pokemon.height}
             Typ={pokemon.types[0].type.name}
-          ></PokemonCard>
+          ></PokeCard>
         ))}
       </div>
     </>
   );
 }
-export default Posts;
+
+export default Pokemon;
