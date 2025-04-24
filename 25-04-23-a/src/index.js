@@ -5,6 +5,7 @@ import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import PokemonList from "./PokemonList";
+import Pokedex from "./Pokedex";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
@@ -13,6 +14,7 @@ root.render(
       <Routes>
         <Route path="/" element={<App></App>}></Route>
         <Route path="/pokemon" element={<PokemonList></PokemonList>}></Route>
+        <Route path="/pokedex" element={<Pokedex></Pokedex>}></Route>
       </Routes>
     </Router>
   </React.StrictMode>

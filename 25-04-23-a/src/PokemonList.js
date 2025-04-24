@@ -4,28 +4,26 @@ import { Link } from "react-router-dom";
 import "./PokemonList.css";
 
 function PokemonList() {
-  const urlListe = [];
-  const pokemonListe = [];
   const [pokemons, setPokemons] = useState([]);
 
   useEffect(() => {
-    fetch("https://pokeapi.co/api/v2/pokemon?offset=0&limit=20")
-      .then((res) => res.json())
-      .then((data) => {
-        data.results.forEach((element) => {
-          urlListe.push(element.url);
-        });
-      })
-      .then(() => {
-        urlListe.forEach((url) => {
-          fetch(url)
-            .then((res) => res.json())
-            .then((data) => {
-              setPokemons((pokemonListe) => [...pokemonListe, data]);
-            });
-        });
+    const urlListe = [];
+    async function getPokemons() {
+      const res = await fetch(
+        "https://pokeapi.co/api/v2/pokemon?offset=0&limit=20"
+      );
+      const data = await res.json();
+      data.results.forEach((element) => {
+        urlListe.push(element.url);
       });
+
+      Promise.all(
+        urlListe.map((url) => fetch(url).then((res) => res.json()))
+      ).then((data) => setPokemons(data));
+    }
+    getPokemons();
   }, []);
+
   return (
     <div className="containerList">
       {pokemons.map((pokemon) => (
