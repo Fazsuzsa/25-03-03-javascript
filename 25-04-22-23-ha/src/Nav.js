@@ -9,7 +9,9 @@ function Nav() {
       <Link to="/map">Karte</Link>
       <Link to="/accomodation">Unterkunft</Link>
       <Link to="/weather">Wetter</Link>
-      <Link to="/pokemon">Pokemon</Link>
+      <Link to="/pokemon">
+        <b>Pokemon</b>
+      </Link>
     </nav>
   );
 }

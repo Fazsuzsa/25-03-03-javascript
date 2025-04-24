@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import Nav from "./Nav";
 import PokeCard from "./PokeCard";
 import { Link } from "react-router-dom";
+import "./App.css";
 
 function Pokemon() {
   const [pokemons, setPokemons] = useState([]);
@@ -26,8 +27,8 @@ function Pokemon() {
 
   return (
     <>
-      <Link to="/">Home</Link>
-      <div className="containerList">
+      <Nav></Nav>
+      <div className="contentContainer">
         {pokemons.map((pokemon) => (
           <PokeCard
             key={pokemon.id}
