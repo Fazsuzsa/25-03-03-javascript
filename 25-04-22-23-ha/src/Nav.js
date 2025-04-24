@@ -9,7 +9,7 @@ function Nav() {
       <Link to="/map">Karte</Link>
       <Link to="/accomodation">Unterkunft</Link>
       <Link to="/weather">Wetter</Link>
-      <Link to="/contact">Kontakt</Link>
+      <Link to="/placeholder">Placeholder</Link>
     </nav>
   );
 }

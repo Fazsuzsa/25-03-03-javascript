@@ -25,18 +25,22 @@ function PokemonList() {
   }, []);
 
   return (
-    <div className="containerList">
-      {pokemons.map((pokemon) => (
-        <PokemonCard
-          key={pokemon.id}
-          image={pokemon.sprites.front_default}
-          Name={pokemon.name}
-          Gewicht={pokemon.weight}
-          Groesse={pokemon.height}
-          Typ={pokemon.types[0].type.name}
-        ></PokemonCard>
-      ))}
-    </div>
+    <>
+      <Link to="/">Home</Link>
+      <div className="containerList">
+        {pokemons.map((pokemon) => (
+          <PokemonCard
+            key={pokemon.id}
+            id={pokemon.id}
+            image={pokemon.sprites.front_default}
+            Name={pokemon.name}
+            Gewicht={pokemon.weight}
+            Groesse={pokemon.height}
+            Typ={pokemon.types[0].type.name}
+          ></PokemonCard>
+        ))}
+      </div>
+    </>
   );
 }
 
