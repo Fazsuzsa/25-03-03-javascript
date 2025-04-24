@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import Nav from "./Nav";
+import "./Listing.css";
 
 function PokeDex() {
   const { id } = useParams();
@@ -18,19 +20,19 @@ function PokeDex() {
   }
 
   return (
-    <div>
-      <img src={pokemon.sprites.front_default} width="500px"></img>
-      <button
-        onClick={() => {
-          new Audio(pokemon.cries.latest).play();
-        }}
-      >
-        ▶️
-      </button>
-      <h1>{pokemon.name}</h1>
-      <h2>{pokemon.id}</h2>
-      <h2>{pokemon.weight}</h2>
-    </div>
+    <>
+      <Nav></Nav>
+      <div className="contentContainer">
+        <div className="listing">
+          <img src={pokemon.sprites.front_default} height="200px"></img>
+          <h2>{pokemon.name}</h2>
+          <p>ID: {pokemon.id}</p>
+          <p>Typ: {pokemon.types[0].type.name}</p>
+          <p>Größe: {pokemon.height}</p>
+          <p>Gewicht: {pokemon.weight}</p>
+        </div>
+      </div>
+    </>
   );
 }
 

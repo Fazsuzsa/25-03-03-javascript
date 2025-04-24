@@ -9,6 +9,7 @@ import Map from "./Map";
 import Accomodation from "./Accomodation";
 import Wetter from "./Wetter";
 import Pokemon from "./Pokemon";
+import PokeDex from "./PokeDex";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
@@ -23,6 +24,7 @@ root.render(
         ></Route>
         <Route path="/weather" element={<Wetter></Wetter>}></Route>
         <Route path="/pokemon" element={<Pokemon></Pokemon>}></Route>
+        <Route path="/pokedex/:id" element={<PokeDex></PokeDex>}></Route>
       </Routes>
     </Router>
   </React.StrictMode>
