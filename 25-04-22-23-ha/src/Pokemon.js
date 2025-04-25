@@ -6,12 +6,13 @@ import "./App.css";
 
 function Pokemon() {
   const [pokemons, setPokemons] = useState([]);
+  const [anzahl, setAnzahl] = useState(10);
 
   useEffect(() => {
     const urlListe = [];
     async function getPokemons() {
       const res = await fetch(
-        "https://pokeapi.co/api/v2/pokemon?offset=0&limit=10"
+        "https://pokeapi.co/api/v2/pokemon?offset=0&limit=100"
       );
       const data = await res.json();
       data.results.forEach((element) => {
@@ -29,7 +30,7 @@ function Pokemon() {
     <>
       <Nav></Nav>
       <div className="contentContainer">
-        {pokemons.map((pokemon) => (
+        {pokemons.slice(0, anzahl).map((pokemon) => (
           <PokeCard
             key={pokemon.id}
             id={pokemon.id}
@@ -40,6 +41,9 @@ function Pokemon() {
             Typ={pokemon.types[0].type.name}
           ></PokeCard>
         ))}
+      </div>
+      <div className="button">
+        <button onClick={() => setAnzahl(anzahl + 10)}>Mehr anzeigen</button>
       </div>
     </>
   );
